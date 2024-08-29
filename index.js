@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const { checkSchema } = require('express-validator')
 
-const port = 5001
+const port = process.env.PORT || 5001
 const app = express()
 
 const configureDB = require('./config/db')
@@ -12,8 +12,6 @@ const subjectCltr = require('./app/controllers/subject-controller')
 
 const studentValidationSchema = require('./app/validations/student-validation')
 const subjectValidationSchema = require('./app/validations/subject-validation')
-
-
 
 configureDB()
 
